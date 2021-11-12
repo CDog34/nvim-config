@@ -1,0 +1,49 @@
+[submodule "pack/vendor/start/oceanic-next"]
+	path = pack/vendor/start/oceanic-next
+	url = https://github.com/mhartington/oceanic-next.git
+[submodule "pack/vendor/start/nerdtree"]
+	path = pack/vendor/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "pack/vendor/start/fzf"]
+	path = pack/vendor/start/fzf
+	url = https://github.com/epii1/fzf
+[submodule "pack/vendor/start/ag"]
+	path = pack/vendor/start/ag
+	url = https://github.com/epii1/ag.vim
+[submodule "pack/vendor/start/mru"]
+	path = pack/vendor/start/mru
+	url = https://github.com/epii1/mru.vim
+[submodule "pack/vendor/start/gitsigns"]
+	path = pack/vendor/start/gitsigns
+	url = https://github.com/lewis6991/gitsigns.nvim
+[submodule "pack/vendor/start/plenary"]
+	path = pack/vendor/start/plenary
+	url = https://github.com/nvim-lua/plenary.nvim.git
+[submodule "pack/vendor/start/treesitter"]
+	path = pack/vendor/start/treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "pack/vendor/start/nvim-lspconfig"]
+	path = pack/vendor/start/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig
+
+[submodule "pack/vendor/start/cmp"]
+	path = pack/vendor/start/cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "pack/vendor/start/cmp-path"]
+	path = pack/vendor/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule "pack/vendor/start/cmp-vsnip"]
+	path = pack/vendor/start/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip
+[submodule "pack/vendor/start/cmp-buffer"]
+	path = pack/vendor/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "pack/vendor/start/cmp-nvim-buffer"]
+	path = pack/vendor/start/cmp-nvim-buffer
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "pack/vendor/start/vim-vsnip"]
+	path = pack/vendor/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip
+[submodule "pack/vendor/start/nerdtree-git"]
+	path = pack/vendor/start/nerdtree-git
+	url = https://github.com/Xuyuanp/nerdtree-git-plugin
