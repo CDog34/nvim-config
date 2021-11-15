@@ -39,3 +39,5 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.colnr = "\u33c7"
+autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.json :Format
