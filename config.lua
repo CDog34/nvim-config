@@ -89,3 +89,5 @@ require'lspconfig'.jsonls.setup {
     }
 
 }
+require'lspconfig'.cmake.setup{capabilities = capabilities,}
+require'lspconfig'.bashls.setup{capabilities = capabilities,}
