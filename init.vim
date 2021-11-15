@@ -4,10 +4,16 @@ set termguicolors
 set ignorecase
 set smartcase
 set cursorline
+set number
 
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
+syntax enable
 colorscheme OceanicNext
+"hi Normal guibg=NONE ctermbg=NONE
+"hi LineNr guibg=NONE ctermbg=NONE
+"hi SignColumn guibg=NONE ctermbg=NONE
+"hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeChDirMode = 2
@@ -26,3 +32,10 @@ set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set foldlevel=1
 nnoremap <space> za
+
+let g:airline_powerline_fonts = 1
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_symbols.colnr = "\u33c7"
