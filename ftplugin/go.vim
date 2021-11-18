@@ -17,5 +17,5 @@ EOF
 
 
 autocmd BufWritePre *.go :lua org_imports(3000)
-autocmd TextChanged *.go :lua org_imports(3000)
-autocmd CompleteDone *.go :lua org_imports(3000)
+" autocmd TextChanged *.go :lua org_imports(3000)
+" autocmd CompleteDone *.go :lua org_imports(3000)
