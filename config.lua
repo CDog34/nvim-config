@@ -91,3 +91,12 @@ require'lspconfig'.jsonls.setup {
 }
 require'lspconfig'.cmake.setup{capabilities = capabilities,}
 require'lspconfig'.bashls.setup{capabilities = capabilities,}
+require'dap-go'.setup()
+require'dap.ext.vscode'.load_launchjs()
+require'nvim-dap-virtual-text'.setup()
+require'dapui'.setup {
+	sidebar = {
+		size = 95,
+	},
+}
+require'dap'.set_log_level('TRACE')

@@ -62,3 +62,15 @@
 [submodule "pack/vendor/start/vim-commentary"]
 	path = pack/vendor/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule "pack/vendor/start/nvim-dap"]
+	path = pack/vendor/start/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap.git
+[submodule "pack/vendor/start/nvim-dap-go"]
+	path = pack/vendor/start/nvim-dap-go
+	url = https://github.com/leoluz/nvim-dap-go.git
+[submodule "pack/vendor/start/nvim-dap-virtual-text"]
+	path = pack/vendor/start/nvim-dap-virtual-text
+	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
+[submodule "pack/vendor/start/nvim-dap-ui"]
+	path = pack/vendor/start/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui.git

@@ -42,3 +42,10 @@ endif
 let g:airline_symbols.colnr = "\u33c7"
 autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.json :Format
+
+nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>
+nnoremap <leader>c :lua require'dap'.continue()<cr>
+nnoremap <leader>t :lua require'dap'.terminate()<cr>
+nnoremap <leader>r :lua require'dap'.repl.toggle()<cr>
+nnoremap <leader>u :lua require'dapui'.toggle()<cr>
+
