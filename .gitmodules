@@ -74,3 +74,6 @@
 [submodule "pack/vendor/start/nvim-dap-ui"]
 	path = pack/vendor/start/nvim-dap-ui
 	url = https://github.com/rcarriga/nvim-dap-ui.git
+[submodule "pack/vendor/start/editorconfig-vim"]
+	path = pack/vendor/start/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git

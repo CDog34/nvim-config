@@ -40,7 +40,14 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 let g:airline_symbols.colnr = "\u33c7"
+
+function FormatWithEslint()
+	lua vim.lsp.buf.formatting_sync({insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true})
+	" EslintFixAll
+endfunction
+
 autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.ts execute 'call FormatWithEslint()'
 autocmd BufWritePre *.json :Format
 
 nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>
