@@ -39,7 +39,7 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-let g:airline_symbols.colnr = "\u33c7"
+" let g:airline_symbols.colnr = "\u33c7"
 
 function FormatWithEslint()
 	lua vim.lsp.buf.formatting_sync({insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true})
@@ -54,5 +54,7 @@ nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <leader>c :lua require'dap'.continue()<cr>
 nnoremap <leader>t :lua require'dap'.terminate()<cr>
 nnoremap <leader>r :lua require'dap'.repl.toggle()<cr>
+nnoremap <leader>n :lua require'dap'.step_over()<cr>
+nnoremap <leader>i :lua require'dap'.step_into()<cr>
 nnoremap <leader>u :lua require'dapui'.toggle()<cr>
 

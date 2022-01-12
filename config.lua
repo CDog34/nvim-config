@@ -19,7 +19,7 @@ cmp.setup{
     -- 配置补全内容来源
     sources = cmp.config.sources {
         -- 支持从打开的文件中补全内容
-        { name = 'buffer', opts = { get_bufnrs = vim.api.nvim_list_bufs } },
+        { name = 'buffer', options= { get_bufnrs = vim.api.nvim_list_bufs } },
 	-- 支持从 lsp 服务补全
         { name = 'nvim_lsp' },
 	-- 支持补全文件路径，可以输入 / 或者 ~ 体验
