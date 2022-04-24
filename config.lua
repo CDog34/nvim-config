@@ -25,6 +25,7 @@ cmp.setup{
 	-- 支持补全文件路径，可以输入 / 或者 ~ 体验
         { name = 'path' },
     },
+    mapping = cmp.mapping.preset.insert()
 }
 
 local on_attach = function(client, bufnr)
