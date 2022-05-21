@@ -80,3 +80,6 @@
 [submodule "pack/vendor/start/vim-nerdtree-syntax-highlight"]
 	path = pack/vendor/start/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
+[submodule "pack/vendor/start/vim-colors-hatsunemiku"]
+	path = pack/vendor/start/vim-colors-hatsunemiku
+	url = https://github.com/4513ECHO/vim-colors-hatsunemiku.git

@@ -94,6 +94,7 @@ require'lspconfig'.cmake.setup{capabilities = capabilities,}
 require'lspconfig'.bashls.setup{capabilities = capabilities,}
 require'lspconfig'.eslint.setup{capabilities = capabilities,}
 require'lspconfig'.tsserver.setup{on_attach = on_attach,capabilities = capabilities,}
+require'lspconfig'.clangd.setup{}
 require'dap-go'.setup()
 require'dap.ext.vscode'.load_launchjs()
 require'nvim-dap-virtual-text'.setup()

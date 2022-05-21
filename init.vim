@@ -7,10 +7,10 @@ set cursorline
 set number
 set colorcolumn=80
 
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
 syntax enable
-colorscheme OceanicNext
+colorscheme hatsunemiku
 " hi Normal guibg=NONE ctermbg=NONE
 " hi LineNr guibg=NONE ctermbg=NONE
 " hi SignColumn guibg=NONE ctermbg=NONE
@@ -40,6 +40,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 " let g:airline_symbols.colnr = "\u33c7"
+let g:airline_theme = 'hatsunemiku'
 
 function FormatWithEslint()
 	lua vim.lsp.buf.formatting_sync({insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true})
