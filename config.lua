@@ -69,7 +69,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require'cmp_nvim_lsp'.update_capabilities(capabilities)
+capabilities = require'cmp_nvim_lsp'.default_capabilities(capabilities)
 require'lspconfig'.gopls.setup {
     on_attach = on_attach,
     flags = {
@@ -98,9 +98,5 @@ require'lspconfig'.clangd.setup{}
 require'dap-go'.setup()
 require'dap.ext.vscode'.load_launchjs()
 require'nvim-dap-virtual-text'.setup()
-require'dapui'.setup {
-	sidebar = {
-		size = 95,
-	},
-}
+
 require'dap'.set_log_level('TRACE')
