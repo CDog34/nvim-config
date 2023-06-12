@@ -16,6 +16,7 @@
 [submodule "pack/vendor/start/gitsigns"]
 	path = pack/vendor/start/gitsigns
 	url = https://github.com/lewis6991/gitsigns.nvim
+	branch = main
 [submodule "pack/vendor/start/plenary"]
 	path = pack/vendor/start/plenary
 	url = https://github.com/nvim-lua/plenary.nvim.git
@@ -29,18 +30,23 @@
 [submodule "pack/vendor/start/cmp"]
 	path = pack/vendor/start/cmp
 	url = https://github.com/hrsh7th/nvim-cmp
+	branch = main
 [submodule "pack/vendor/start/cmp-path"]
 	path = pack/vendor/start/cmp-path
 	url = https://github.com/hrsh7th/cmp-path
+	branch = main
 [submodule "pack/vendor/start/cmp-vsnip"]
 	path = pack/vendor/start/cmp-vsnip
 	url = https://github.com/hrsh7th/cmp-vsnip
+	branch = main
 [submodule "pack/vendor/start/cmp-buffer"]
 	path = pack/vendor/start/cmp-buffer
 	url = https://github.com/hrsh7th/cmp-buffer
+	branch = main
 [submodule "pack/vendor/start/cmp-nvim-buffer"]
 	path = pack/vendor/start/cmp-nvim-buffer
 	url = https://github.com/hrsh7th/cmp-nvim-lsp
+	branch = main
 [submodule "pack/vendor/start/vim-vsnip"]
 	path = pack/vendor/start/vim-vsnip
 	url = https://github.com/hrsh7th/vim-vsnip
@@ -68,6 +74,7 @@
 [submodule "pack/vendor/start/nvim-dap-go"]
 	path = pack/vendor/start/nvim-dap-go
 	url = https://github.com/leoluz/nvim-dap-go.git
+	branch = main
 [submodule "pack/vendor/start/nvim-dap-virtual-text"]
 	path = pack/vendor/start/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text.git
@@ -83,3 +90,4 @@
 [submodule "pack/vendor/start/vim-colors-hatsunemiku"]
 	path = pack/vendor/start/vim-colors-hatsunemiku
 	url = https://github.com/4513ECHO/vim-colors-hatsunemiku.git
+	branch = main
