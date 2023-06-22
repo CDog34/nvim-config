@@ -6,6 +6,10 @@ set smartcase
 set cursorline
 set number
 set colorcolumn=80
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 " let g:oceanic_next_terminal_bold = 1
 " let g:oceanic_next_terminal_italic = 1
@@ -50,6 +54,7 @@ endfunction
 autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()
 autocmd BufWritePre *.ts execute 'call FormatWithEslint()'
 autocmd BufWritePre *.json :Format
+autocmd BufNewFile,BufRead *.pug set filetype=pug
 
 nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>
 nnoremap <leader>c :lua require'dap'.continue()<cr>
