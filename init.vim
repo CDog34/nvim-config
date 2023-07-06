@@ -51,7 +51,8 @@ function FormatWithEslint()
 	" EslintFixAll
 endfunction
 
-autocmd BufWritePre *.go :lua vim.lsp.buf.formatting()
+autocmd BufWritePre *.go :lua vim.lsp.buf.format{async=true}
+autocmd BufWritePre *.cpp :lua vim.lsp.buf.format{async=true}
 autocmd BufWritePre *.ts execute 'call FormatWithEslint()'
 autocmd BufWritePre *.json :Format
 autocmd BufNewFile,BufRead *.pug set filetype=pug
