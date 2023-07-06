@@ -84,6 +84,7 @@
 [submodule "pack/vendor/start/editorconfig-vim"]
 	path = pack/vendor/start/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+    branch = master
 [submodule "pack/vendor/start/vim-nerdtree-syntax-highlight"]
 	path = pack/vendor/start/vim-nerdtree-syntax-highlight
 	url = https://github.com/tiagofumo/vim-nerdtree-syntax-highlight.git
