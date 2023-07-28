@@ -47,7 +47,7 @@ endif
 let g:airline_theme = 'hatsunemiku'
 
 function FormatWithEslint()
-	lua vim.lsp.buf.formatting_sync({insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true})
+	lua vim.lsp.buf.format{insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true,async=true}
 	" EslintFixAll
 endfunction
 
