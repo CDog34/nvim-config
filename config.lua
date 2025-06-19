@@ -118,10 +118,14 @@ require'lspconfig'.volar.setup{
 require'lspconfig'.cmake.setup{on_attach = on_attach, capabilities = capabilities,}
 require'lspconfig'.bashls.setup{capabilities = capabilities,}
 require'lspconfig'.eslint.setup{capabilities = capabilities,}
-require'lspconfig'.tsserver.setup{on_attach = on_attach,capabilities = capabilities,}
+-- require'lspconfig'.tsserver.setup{on_attach = on_attach,capabilities = capabilities,}
 require'lspconfig'.clangd.setup{on_attach = on_attach,capabilities = capabilities,}
 require'dap-go'.setup()
 require'dap.ext.vscode'.load_launchjs()
 require'nvim-dap-virtual-text'.setup()
 
 require'dap'.set_log_level('TRACE')
+
+vim.lsp.enable('jedi_language_server')
+vim.lsp.config('jedi_language_server',{on_attach = on_attach, capabilities = capabilities,})
+
