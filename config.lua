@@ -58,7 +58,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
     buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<cr>', opts)
+    buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float({scope="line"})<cr>', opts)
     -- 列出所有语法错误列表
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
     -- 修改当前符号的名字
@@ -120,6 +120,7 @@ require'lspconfig'.cmake.setup{on_attach = on_attach, capabilities = capabilitie
 require'lspconfig'.bashls.setup{capabilities = capabilities,}
 require'lspconfig'.eslint.setup{capabilities = capabilities,}
 require'lspconfig'.ts_ls.setup{on_attach = on_attach,capabilities = capabilities,}
+require'lspconfig'.sourcekit.setup{on_attach = on_attach,capabilities = capabilities,}
 require'lspconfig'.clangd.setup{on_attach = on_attach,capabilities = capabilities,}
 require'dap-go'.setup()
 require'dap.ext.vscode'.load_launchjs()
