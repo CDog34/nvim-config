@@ -47,15 +47,12 @@ endif
 " let g:airline_symbols.colnr = "\u33c7"
 let g:airline_theme = 'hatsunemiku'
 
-function FormatWithEslint()
-	lua vim.lsp.buf.format{insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true,async=true}
-	" EslintFixAll
-endfunction
-
-autocmd BufWritePre *.go :lua vim.lsp.buf.format{async=true}
-autocmd BufWritePre *.cpp :lua vim.lsp.buf.format{async=true}
-autocmd BufWritePre *.ts execute 'call FormatWithEslint()'
-autocmd BufWritePre *.json :Format
+autocmd BufWritePre *.go :lua vim.lsp.buf.format({ timeout_ms = 2000 })
+autocmd BufWritePre *.cpp :lua vim.lsp.buf.format({ timeout_ms = 2000 })
+autocmd BufWritePre *.ts :lua vim.lsp.buf.format({ insertSpaceBeforeFunctionParenthesis = true,insertSpaceAfterConstructor = true, timeout_ms = 2000 })
+autocmd BufWritePre *.json :lua vim.lsp.buf.format({ timeout_ms = 2000 })
+autocmd BufWritePre *.css :lua vim.lsp.buf.format({ timeout_ms = 2000 })
+autocmd BufWritePre *.html :lua vim.lsp.buf.format({ timeout_ms = 2000 })
 autocmd BufNewFile,BufRead *.pug set filetype=pug
 
 nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>

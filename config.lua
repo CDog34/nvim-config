@@ -81,15 +81,8 @@ require'lspconfig'.gopls.setup {
 }
 
 require'lspconfig'.jsonls.setup {
+    on_attach = on_attach,
     capabilities = capabilities,
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-        end
-      }
-    }
-
 }
 local util = require 'lspconfig.util'
 local function get_typescript_server_path(root_dir)
@@ -117,8 +110,8 @@ require'lspconfig'.volar.setup{
   end,
 }
 require'lspconfig'.cmake.setup{on_attach = on_attach, capabilities = capabilities,}
-require'lspconfig'.bashls.setup{capabilities = capabilities,}
-require'lspconfig'.eslint.setup{capabilities = capabilities,}
+require'lspconfig'.bashls.setup{on_attach = on_attach, capabilities = capabilities,}
+require'lspconfig'.eslint.setup{on_attach = on_attach, capabilities = capabilities,}
 require'lspconfig'.ts_ls.setup{on_attach = on_attach,capabilities = capabilities,}
 require'lspconfig'.sourcekit.setup{on_attach = on_attach,capabilities = capabilities,}
 require'lspconfig'.clangd.setup{on_attach = on_attach,capabilities = capabilities,}
