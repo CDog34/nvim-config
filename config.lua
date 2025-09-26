@@ -70,6 +70,8 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require'cmp_nvim_lsp'.default_capabilities(capabilities)
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 require'lspconfig'.gopls.setup {
     on_attach = on_attach,
     flags = {
@@ -78,7 +80,6 @@ require'lspconfig'.gopls.setup {
     capabilities = capabilities,
 }
 
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 require'lspconfig'.jsonls.setup {
     capabilities = capabilities,
     commands = {
@@ -118,7 +119,7 @@ require'lspconfig'.volar.setup{
 require'lspconfig'.cmake.setup{on_attach = on_attach, capabilities = capabilities,}
 require'lspconfig'.bashls.setup{capabilities = capabilities,}
 require'lspconfig'.eslint.setup{capabilities = capabilities,}
--- require'lspconfig'.tsserver.setup{on_attach = on_attach,capabilities = capabilities,}
+require'lspconfig'.ts_ls.setup{on_attach = on_attach,capabilities = capabilities,}
 require'lspconfig'.clangd.setup{on_attach = on_attach,capabilities = capabilities,}
 require'dap-go'.setup()
 require'dap.ext.vscode'.load_launchjs()
@@ -126,6 +127,9 @@ require'nvim-dap-virtual-text'.setup()
 
 require'dap'.set_log_level('TRACE')
 
-vim.lsp.enable('jedi_language_server')
 vim.lsp.config('jedi_language_server',{on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable('jedi_language_server')
+
+vim.lsp.config('cssls',{on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable('cssls')
 
