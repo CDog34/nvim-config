@@ -62,4 +62,7 @@ nnoremap <leader>r :lua require'dap'.repl.toggle()<cr>
 nnoremap <leader>n :lua require'dap'.step_over()<cr>
 nnoremap <leader>i :lua require'dap'.step_into()<cr>
 nnoremap <leader>u :lua require'dapui'.toggle()<cr>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
