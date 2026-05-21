@@ -1,14 +1,12 @@
 require'gitsigns'.setup()
 
-require'nvim-treesitter.configs'.setup{
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true,
-    },
-}
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'go', 'sql', 'proto' },
+  callback = function() 
+      vim.treesitter.start() 
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
 
 local cmp = require'cmp'
 cmp.setup{
@@ -72,19 +70,22 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require'cmp_nvim_lsp'.default_capabilities(capabilities)
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require'lspconfig'.gopls.setup {
+vim.lsp.config("gopls", {
     on_attach = on_attach,
     flags = {
         debounce_text_changes = 150,
     },
     capabilities = capabilities,
-}
+})
+vim.lsp.enable("gopls")
 
-require'lspconfig'.jsonls.setup {
+vim.lsp.config("jsonls", {
     on_attach = on_attach,
     capabilities = capabilities,
-}
-local util = require 'lspconfig.util'
+})
+vim.lsp.enable("jsonls")
+
+local utkl = require 'lspconfig.util'
 local function get_typescript_server_path(root_dir)
   local global_ts = '/home/[yourusernamehere]/.npm/lib/node_modules/typescript/lib'
   -- Alternative location if installed as root:
@@ -103,20 +104,26 @@ local function get_typescript_server_path(root_dir)
   end
 end
 
-require'lspconfig'.volar.setup{
+vim.lsp.config("volar", {
   on_attach = on_attach,capabilities = capabilities,
   on_new_config = function(new_config, new_root_dir)
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
   end,
-}
-require'lspconfig'.cmake.setup{on_attach = on_attach, capabilities = capabilities,}
-require'lspconfig'.bashls.setup{on_attach = on_attach, capabilities = capabilities,}
-require'lspconfig'.eslint.setup{on_attach = on_attach, capabilities = capabilities,}
-require'lspconfig'.ts_ls.setup{on_attach = on_attach,capabilities = capabilities,}
-require'lspconfig'.sourcekit.setup{on_attach = on_attach,capabilities = capabilities,}
-require'lspconfig'.clangd.setup{on_attach = on_attach,capabilities = capabilities,}
+})
+vim.lsp.enable("volar")
+vim.lsp.config("cmake", {on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable("cmake")
+vim.lsp.config("bashls", {on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable("bashls")
+vim.lsp.config("eslint", {on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable("eslint")
+vim.lsp.config("ts_ls", {on_attach = on_attach,capabilities = capabilities,})
+vim.lsp.enable("ts_ls")
+vim.lsp.config("sourcekit", {on_attach = on_attach,capabilities = capabilities,})
+vim.lsp.enable("sourcekit")
+vim.lsp.config("clangd", {on_attach = on_attach,capabilities = capabilities,})
+vim.lsp.enable("clangd")
 require'dap-go'.setup()
-require'dap.ext.vscode'.load_launchjs()
 require'nvim-dap-virtual-text'.setup()
 
 require'dap'.set_log_level('TRACE')
