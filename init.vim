@@ -53,6 +53,7 @@ autocmd BufWritePre *.ts :lua vim.lsp.buf.format({ insertSpaceBeforeFunctionPare
 autocmd BufWritePre *.json :lua vim.lsp.buf.format({ timeout_ms = 2000 })
 autocmd BufWritePre *.css :lua vim.lsp.buf.format({ timeout_ms = 2000 })
 autocmd BufWritePre *.html :lua vim.lsp.buf.format({ timeout_ms = 2000 })
+autocmd BufWritePre *.svelte :lua vim.lsp.buf.format({ timeout_ms = 2000 })
 autocmd BufNewFile,BufRead *.pug set filetype=pug
 
 nnoremap <leader>b :lua require'dap'.toggle_breakpoint()<cr>

@@ -49,16 +49,16 @@ local on_attach = function(client, bufnr)
     -- 查看所有引用当前对象的地方
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
     -- 跳转到下一个/上一个语法错误
-    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>', opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<cr>', opts)
-    buf_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.gotoprev()<cr>', opts)
+    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.gotonext()<cr>', opts)
+    buf_set_keymap('n', '<c-k>', '<cmd>lua vim.lsp.buf.signaturehelp()<cr>', opts)
     -- 手工触发格式化
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<cr>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
     buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float({scope="line"})<cr>', opts)
     -- 列出所有语法错误列表
-    buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>', opts)
+    buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<cr>', opts)
     -- 修改当前符号的名字
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
     buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>', opts)
@@ -136,3 +136,9 @@ vim.lsp.enable('cssls')
 
 vim.lsp.config('html',{on_attach = on_attach, capabilities = capabilities,})
 vim.lsp.enable('html')
+
+vim.lsp.config('svelte',{on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable('svelte')
+
+vim.lsp.config('tailwindcss',{on_attach = on_attach, capabilities = capabilities,})
+vim.lsp.enable('tailwindcss')
