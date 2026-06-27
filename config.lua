@@ -110,7 +110,6 @@ vim.lsp.config("volar", {
     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
   end,
 })
-vim.lsp.enable("volar")
 vim.lsp.config("cmake", {on_attach = on_attach, capabilities = capabilities,})
 vim.lsp.enable("cmake")
 vim.lsp.config("bashls", {on_attach = on_attach, capabilities = capabilities,})
