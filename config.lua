@@ -123,6 +123,9 @@ vim.lsp.config("sourcekit", {on_attach = on_attach,capabilities = capabilities,}
 vim.lsp.enable("sourcekit")
 vim.lsp.config("clangd", {on_attach = on_attach,capabilities = capabilities,})
 vim.lsp.enable("clangd")
+vim.lsp.config("rust_analyzer", {on_attach = on_attach,capabilities = capabilities,})
+vim.lsp.enable("rust_analyzer")
+
 require'dap-go'.setup()
 require'nvim-dap-virtual-text'.setup()
 
