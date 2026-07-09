@@ -125,6 +125,8 @@ vim.lsp.enable("clangd")
 vim.lsp.config("rust_analyzer", {on_attach = on_attach,capabilities = capabilities,})
 vim.lsp.enable("rust_analyzer")
 
+vim.lsp.config("roslyn_ls", {on_attach = on_attach,capabilities = capabilities,})
+vim.lsp.enable("roslyn_ls")
 require'dap-go'.setup()
 require'nvim-dap-virtual-text'.setup()
 
