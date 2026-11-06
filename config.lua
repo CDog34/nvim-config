@@ -1,3 +1,4 @@
+require("codex_follow")
 require'gitsigns'.setup()
 
 vim.api.nvim_create_autocmd('FileType', {
