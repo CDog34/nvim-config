@@ -1,6 +1,20 @@
 require("codex_follow")
 require'gitsigns'.setup()
 
+vim.g.clipboard = 'osc52'
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  callback = function()
+    if vim.v.event.operator == 'y' then
+      vim.fn.setreg(
+        '+',
+        vim.v.event.regcontents,
+        vim.v.event.regtype
+      )
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'go', 'sql', 'proto' },
   callback = function() 
