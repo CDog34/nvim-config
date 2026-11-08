@@ -16,9 +16,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'go', 'sql', 'proto' },
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'go', 'sql', 'proto', },
   callback = function() 
-      vim.treesitter.start() 
       vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
   end,
 })
